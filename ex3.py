@@ -2,6 +2,7 @@ import random
 import os
 from time import sleep
 
+#função para definir a palavra aleatoriamente
 def escolher_palavra():
     with open("lista_palavras.txt", "r",encoding = "UTF-8") as arquivo:
         palavras = arquivo.readlines()
@@ -9,49 +10,45 @@ def escolher_palavra():
 
 p_secreta = escolher_palavra()
 p_descobrindo = ["_"] * len(p_secreta)
-l_adivinhadas = []
-count = 6
+lista_palavra = []
+count_errado = len(p_secreta) + 1
 
-while count > 0:
+#o programa vai rodar até você ganhar ou passar o nomero de tantativas
+while count_errado > 0:
     os.system('cls')
     print(p_secreta)
+    
+    #mostra a palavra sendo descoberta,contagem de tentativas restantes e as ultimas palavras tentadas
     print(p_descobrindo)
+    print(f"{count_errado} tentativas restantes")
+    if len(lista_palavra) != 0:
+        print(f"Ultimas palavras adivinhadas: {lista_palavra}")
+
     escolha = input("Tente adivinhar escrevendo a letra ou a palavra: ")
+    lista_palavra.append(escolha)
     
-    if len(escolha) == 1:
-        if escolha in l_adivinhadas:
-            print("Você ja escreveu essa letra antes!")
-            sleep(2)
-            continue
-        if escolha in p_secreta:
-            for i in range(len(p_secreta)):
-                if p_secreta[i] == escolha:
-                    p_descobrindo[i] = escolha
-            l_adivinhadas.append(escolha)
-            continue  
-        
-        if len(p_secreta) == len(l_adivinhadas):
-            print(f"Você acertou a palavra!A palavra era {p_secreta}")
-            sleep(2)
-            break
-
-        else:
-            print("Letra errada!")
-            sleep(2)
-            count -= 1
-
-    else:
-        if escolha == p_secreta:
-            print(f"Você acertou!a palavra era {p_secreta}")
-            sleep(2)
-            break
-        else:
-            print("Você errou a palavra!")
-            count -= 1
-            sleep(2)
-        
-
+    #não deixa a palavra tentada ser de tamanho diferente da palavra secreta
+    if len(escolha) != len(p_secreta):
+        os.system('cls')
+        print("Tamanho da palavra invalido!")
+        sleep(2)
+        continue
     
-if count == 0:
+    #coloca as letras da tentativa que são iguais e na mesma posição da palavra secreta na palavra sendo descoberta   
+    for i in range(min(len(p_secreta), len(escolha))):
+        if p_secreta[i] == escolha[i]:
+            p_descobrindo[i] = p_secreta[i]
+    count_errado -= 1        
+    
+    #se a palavra for acertada mostra que você acertou e a palavra  
+    if p_descobrindo == list(p_secreta):
+        os.system('cls')
+        print(f"Você acertou!a palavra era {p_secreta}")
+        sleep(2)
+        break
+
+#se acabar o número de tentativas encerra o programa
+if count_errado == 0:
+    os.system('cls')
     print(f"Número máximo de tentativas atingido! a palavra era {p_secreta}")
     sleep(2)
