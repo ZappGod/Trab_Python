@@ -1,3 +1,10 @@
+"""
+Jogo da velha 4x4: Primeiramente,imprime a tabela do jogo atravez de uma função que usa o for pra imprimir cada linha uma em baixo da outra corretamente,depois pega a linha e a coluna que o jogador decidir,
+diminuindo por -1,assim ele pode escolher sem problemas a linha e a coluna normalmente,verificando se a posição que ele colocou existe na tabela ou se ja não foi colocado uma jogada la,
+após isso armazena na tabela a jogada dele e soma +1 em um contador,pegando a tabela e o jogador atuais em uma função que verifica linha,coluna e verticais para saber se há ganhador,
+verifica se o contador esta em 16,pois se estiver significa que não tem ganhadores e a mensagem "deu velha" aparece,após isso o player é atualizado para o proximo,isso tudo dentro de uma função 
+while True até alguem ganhar ou der empate.
+"""
 import os
 from time import sleep
 
