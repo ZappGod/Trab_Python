@@ -1,3 +1,11 @@
+"""
+“Banco de dados” de dicionários:Primeiramente o usuário tem que entrar com os campos que ele quer que tenha no banco de dados,após isso mostra o menu que ele decide se quer cadastras,
+imprimir ou encerrar,na primeira opção ele pega os campos que escolheu e joga para a função que cadastra os dados e depois pede para ele escrever a informação a cada respectivo campo que ele 
+escolheu e armazena no banco de dados,assim voltando novamente para o menu.Na segunda opção,vai ser redirecionado para a função de imprimir esses dados,e la ira perguntar como ele deseja 
+imprimir,se for todos os dados ele apenas imprime tudo e mostra ao usuário,se for por nomes,ele mostra na tela os dados dos nomes que o usuário colocou,se for por campos,
+mostra os dados de quem tiver os campos desejados,e se for por nomes e campos,ele filtra os dados dos nomes,dados e os valores dos dados que o usuário escolher.E por fim a ultima 
+opção do menu é para encerrar o programa
+"""
 #armazenamento dos usuarios
 banco_user = []
 
