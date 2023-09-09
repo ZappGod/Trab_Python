@@ -1,3 +1,12 @@
+"""
+Jogo Termo:Pegando as palavras do arquivo "lista_palavras.txt" ele escolhe uma palavra aleatoria para ser a escolhida,após isso o jogador tem que identificar essa palavra,é mostrado na tela o 
+tamanho dessa palavra,que é uma lista do tamanho da palavra que o jogador tem que adivinhar como uma lista tambem das letras certas,o contador de tentativas que é do tamanho da palavra a ser 
+adivinhada somando com mais 1,e depois da primeira tentativa é mostrado as palavras que ele tentou anteriormente,após ele escrever a tentativa,é verificado se a palavra tem o mesmo tamanho da palavra a ser 
+adivinhada,se não tiver ele tem que colocar outra,se estiver do tamanho certo ele armazena ela na lista de tentativas e verifica cada letra pra ver se ela esta igual a palavra a ser adivinhada,
+se tiver algumas letras certas elas seram mostradas na tela e na posição certa,elas seram mostradas na tela para ajudar o jogador a adivinhar,e um contador de tentativas vai adicionar -1,quando esse 
+contador chegar a zero e o jogador não tiver acertado o jogo se encerra e mostra a palavra certa,porem se a lista de letras certas estiver cheia,assim indicando que o jogador acertou,mostra que ele 
+acertou a palavra e a mostra na tela.
+"""
 import random
 import os
 from time import sleep
