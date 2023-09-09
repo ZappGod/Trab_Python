@@ -16,7 +16,6 @@ count_errado = len(p_secreta) + 1
 #o programa vai rodar até você ganhar ou passar o nomero de tantativas
 while count_errado > 0:
     os.system('cls')
-    print(p_secreta)
     
     #mostra a palavra sendo descoberta,contagem de tentativas restantes e as ultimas palavras tentadas
     print(p_descobrindo)
