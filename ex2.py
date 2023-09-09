@@ -1,3 +1,9 @@
+"""
+Jogo da velha NxN:Esse é igual ao anterior,porem inicialmente ele recebe um valor que o jogodor decide qual para definir o tamanho do tabuleiro,esse valor tem que ser maior que 2,
+pois tem que ser um tabuleiro quadrado,se for menor que 2 não vai permitir,podendo apenas continuar se escolher maior que 2,após isso o jogo continua normalmente,mas todas os valores que antes eram 
+fixo de uma tabela 4x4 foram substituidos por essa variavel com nome de "tam" na qual o valor foi escolhido pelo jogador,isso tambem muda como a tabela foi feita,que faz o tramanho ser feito dentro de uma 
+lista de listas que são um for do elemento pelo range desse "tam".
+"""
 import os
 from time import sleep
 
